@@ -1,0 +1,150 @@
+/* Cobaye design tokens — "carnet de laboratoire moderne" */
+:root {
+  color-scheme: light;
+
+  /* Typography */
+  --font-display: 'Fraunces Variable', 'Iowan Old Style', Georgia, 'Times New Roman', serif;
+  --font-ui: 'Inter Variable', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  --font-mono: 'JetBrains Mono Variable', ui-monospace, 'SF Mono', Menlo, Consolas, monospace;
+
+  --fs-xs: 0.75rem;
+  --fs-sm: 0.875rem;
+  --fs-md: 1rem;
+  --fs-lg: 1.125rem;
+  --fs-xl: 1.375rem;
+  --fs-2xl: 1.75rem;
+  --fs-3xl: 2.25rem;
+  --fs-4xl: 3rem;
+
+  /* Surfaces & ink (light) */
+  --paper: #f6f1e7;
+  --paper-2: #fffdf8;
+  --paper-3: #ede6d8;
+  --paper-4: #e2d9c7;
+  --ink: #1b1f2a;
+  --ink-2: #4a4f5c;
+  --ink-3: #777c88;
+  --ink-4: #a3a7b1;
+  --line: #ddd5c4;
+  --line-2: #ccc3b0;
+
+  /* Conditions (validated palette) */
+  --a: #d4502a;
+  --a-ink: #a63a19;
+  --a-soft: #f7dcd1;
+  --a-soft-2: #fbece6;
+  --b: #00909c;
+  --b-ink: #006c75;
+  --b-soft: #cdeced;
+  --b-soft-2: #e4f5f6;
+
+  /* Status (reserved) */
+  --ok: #2b7a3b;
+  --ok-soft: #dcefdc;
+  --warn: #a7641a;
+  --warn-soft: #f7e6cc;
+  --danger: #b3261e;
+  --danger-soft: #f6d9d6;
+  --info: #35507a;
+  --info-soft: #dfe6f2;
+
+  /* Accent = ink for buttons; highlight for emphasis */
+  --accent: var(--ink);
+  --on-accent: var(--paper);
+  --highlight: #f2c14e;
+
+  /* Geometry */
+  --r-sm: 6px;
+  --r-md: 12px;
+  --r-lg: 18px;
+  --r-xl: 26px;
+  --shadow-1: 0 1px 2px rgba(27, 31, 42, 0.06), 0 1px 1px rgba(27, 31, 42, 0.04);
+  --shadow-2: 0 6px 20px -8px rgba(27, 31, 42, 0.22), 0 2px 6px -2px rgba(27, 31, 42, 0.08);
+  --shadow-3: 0 24px 50px -20px rgba(27, 31, 42, 0.35);
+
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 24px;
+  --space-6: 32px;
+  --space-7: 48px;
+  --space-8: 64px;
+
+  --content-max: 760px;
+  --nav-h: 64px;
+  --ease: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme='light']) {
+    color-scheme: dark;
+    --paper: #171a21;
+    --paper-2: #1f232c;
+    --paper-3: #12151b;
+    --paper-4: #0d0f14;
+    --ink: #f1ece2;
+    --ink-2: #bdb7aa;
+    --ink-3: #8b867a;
+    --ink-4: #5f5c55;
+    --line: #2d323e;
+    --line-2: #3a4050;
+    --a: #e8673f;
+    --a-ink: #f39b7f;
+    --a-soft: #3d241b;
+    --a-soft-2: #2b1d18;
+    --b: #2aa5ab;
+    --b-ink: #7fd3d7;
+    --b-soft: #133538;
+    --b-soft-2: #12282b;
+    --ok: #6fc07c;
+    --ok-soft: #1c3321;
+    --warn: #e0a85a;
+    --warn-soft: #3a2c16;
+    --danger: #ee7b74;
+    --danger-soft: #3f1e1c;
+    --info: #9bb3dd;
+    --info-soft: #1f2a3d;
+    --accent: #f1ece2;
+    --on-accent: #171a21;
+    --highlight: #e0b23f;
+    --shadow-1: 0 1px 2px rgba(0, 0, 0, 0.3);
+    --shadow-2: 0 6px 20px -8px rgba(0, 0, 0, 0.6), 0 2px 6px -2px rgba(0, 0, 0, 0.3);
+    --shadow-3: 0 24px 50px -20px rgba(0, 0, 0, 0.7);
+  }
+}
+:root[data-theme='dark'] {
+  color-scheme: dark;
+  --paper: #171a21;
+  --paper-2: #1f232c;
+  --paper-3: #12151b;
+  --paper-4: #0d0f14;
+  --ink: #f1ece2;
+  --ink-2: #bdb7aa;
+  --ink-3: #8b867a;
+  --ink-4: #5f5c55;
+  --line: #2d323e;
+  --line-2: #3a4050;
+  --a: #e8673f;
+  --a-ink: #f39b7f;
+  --a-soft: #3d241b;
+  --a-soft-2: #2b1d18;
+  --b: #2aa5ab;
+  --b-ink: #7fd3d7;
+  --b-soft: #133538;
+  --b-soft-2: #12282b;
+  --ok: #6fc07c;
+  --ok-soft: #1c3321;
+  --warn: #e0a85a;
+  --warn-soft: #3a2c16;
+  --danger: #ee7b74;
+  --danger-soft: #3f1e1c;
+  --info: #9bb3dd;
+  --info-soft: #1f2a3d;
+  --accent: #f1ece2;
+  --on-accent: #171a21;
+  --highlight: #e0b23f;
+  --shadow-1: 0 1px 2px rgba(0, 0, 0, 0.3);
+  --shadow-2: 0 6px 20px -8px rgba(0, 0, 0, 0.6), 0 2px 6px -2px rgba(0, 0, 0, 0.3);
+  --shadow-3: 0 24px 50px -20px rgba(0, 0, 0, 0.7);
+}
