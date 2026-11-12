@@ -1,0 +1,30 @@
+# Netlify configuration for Cobaye (Vite + React single-page app).
+# Netlify detects this file automatically: no setting to fill in the dashboard.
+
+[build]
+  command = "npm run build"
+  publish = "dist"
+
+[build.environment]
+  # The Vite config uses JSON import attributes, which need Node 22.
+  NODE_VERSION = "22"
+  # Served at the root of the Netlify domain, so the base path stays "/".
+  VITE_BASE = "/"
+
+# Client-side routing: every unknown path loads the app shell.
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
+
+# The service worker must never be served from the browser cache,
+# otherwise updates would be delayed by up to 24 hours.
+[[headers]]
+  for = "/sw.js"
+  [headers.values]
+    Cache-Control = "no-cache"
+
+[[headers]]
+  for = "/manifest.webmanifest"
+  [headers.values]
+    Content-Type = "application/manifest+json"
